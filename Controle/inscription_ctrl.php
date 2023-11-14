@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 // Inclure le fichier de connexion à la base de données
 require_once('../Modele/connexionBDD.php');
 
@@ -104,14 +102,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $erreurs[] = "L'adresse e-mail n'est pas valide.";
     }
 
-    // Si des erreurs sont survenues, affichez-les
+    // Si des erreurs sont survenues, stockez-les dans une variable de session
     if (!empty($erreurs)) {
-        // Vous pouvez afficher les erreurs ici, par exemple :
-        echo '<div style="color: red;">';
-        foreach ($erreurs as $erreur) {
-            echo $erreur . '<br>';
-        }
-        echo '</div>';
+        $_SESSION['erreurs_inscription'] = $erreurs;
+        header("Location: ../Vues/inscription.php");
+        exit();
     } else {
         // Aucune erreur, procédez à l'inscription
         // Hash du mot de passe

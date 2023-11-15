@@ -1,0 +1,156 @@
+/* Style général du corps de la page */
+body {
+    font-family: 'MedievalSharp', serif; /* Appliquer la police MedievalSharp à tous les éléments du texte */
+    background-color: #d2b48c; /* Couleur brun clair pour le fond */
+    margin: 0;
+    padding: 0;
+}
+
+/* Style du conteneur principal */
+.container, form {
+    max-width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Style des titres */
+h2 {
+    text-align: center;
+    color: #333;
+    margin-top: 50px;
+}
+
+/* Style des labels */
+label {
+    color: #666;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Style des inputs de formulaire */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Style du bouton d'inscription */
+input[type="submit"] {
+    border: none;
+    background-color: #5cb85c;
+    color: white;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #4cae4c;
+}
+
+/* Style des liens */
+a {
+    text-decoration: none;
+    color: #5cb85c;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Style des messages d'erreur */
+div[style="color: red;"] {
+    background-color: #ffc0cb;
+    color: red;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+/* Style du conteneur de l'input de mot de passe */
+.password-input {
+    position: relative;
+    display: flex;
+}
+
+/* Style de l'icône de visibilité du mot de passe */
+.password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    cursor: pointer;
+}
+
+/* Assurez-vous que tout contenu est bien contenu dans le body */
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+/* Style de base pour la barre de navigation */
+nav {
+    background-color: #8B4513;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+/* Style pour le logo */
+.logo {
+    font-size: 24px;
+    color: #FFF;
+}
+
+/* Style pour la liste de navigation */
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style pour chaque élément de la liste */
+nav ul li {
+    margin: 0 10px;
+}
+
+/* Style pour les liens de la barre de navigation */
+nav ul li a {
+    color: #FFF;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Style pour les informations utilisateur */
+.user-info {
+    text-align: right;
+}
+
+.user-info a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+.user-info a:hover {
+    text-decoration: underline;
+}
+
+@font-face {
+    font-family: 'MedievalSharp';
+    src: url('../Police/MedievalSharp-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

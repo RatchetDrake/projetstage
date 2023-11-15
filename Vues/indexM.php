@@ -1,22 +1,27 @@
-<?php
-session_start(); // Assurez-vous d'inclure cette ligne au début de vos pages
-$role = $_SESSION['role']; // Récupérez le rôle de l'utilisateur depuis la session
-include('../Modele/nav.php'); // Incluez le fichier nav.php
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mon Site de Créativité Littéraire</title>
+<link rel="stylesheet" href="../Publique/Css/index.css">
+</head>
+<body>
 
-// Vérifier si l'utilisateur est connecté, sinon le rediriger vers la page de connexion
-if (!isset($_SESSION['nom_utilisateur'])) {
-    header("Location: connexion.php");
-    exit();
-}
+<?php include('../Controle/index_ctrl.php'); ?>
 
-include('../Modele/header.php');
-?>
-
-<!-- Contenu de votre page d'accueil -->
-<h2>Bienvenue sur mon site web</h2>
-<p>Ceci est la page d'accueil de mon site.</p>
-<!-- Ajoutez le contenu de votre page ici -->
-
+<div class="content">
+  <div class="image-container-left">
+    <img src="../Publique/images/Imagegauche.PNG" alt="Description de la première image" class="image-1">
+  </div>
+  <div class="welcome-text texte-accueil">
+    <h2>Bienvenue sur notre site</h2>
+    <p>Votre espace dédié à la créativité littéraire et à l'exploration d'histoires interactives ! 📖✨ Notre plateforme vous offre un lieu unique pour donner vie à vos idées, partager vos récits et plonger dans un univers de possibilités infinies. Que vous soyez un écrivain en herbe, un passionné de jeux de rôle ou simplement un amoureux des belles histoires, vous êtes au bon endroit.</p>
+  </div>
+  <div class="image-container-right">
+    <img src="../Publique/images/imagedroite.PNG" alt="Description de la seconde image" class="image-2">
+  </div>
 </div> <!-- Fermeture de la div "content" -->
+
 </body>
 </html>

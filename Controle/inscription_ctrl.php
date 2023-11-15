@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 // Inclure le fichier de connexion à la base de données
 require_once('../Modele/connexionBDD.php');
 
@@ -9,11 +11,13 @@ $erreurs = array();
 function est_motdepasse_valide($motdepasse) {
     // Vérifie que le mot de passe a entre 8 et 20 caractères
     if (strlen($motdepasse) < 8 || strlen($motdepasse) > 20) {
+        $_SESSION['erreurs_inscription'][] = "Le mot de passe doit avoir entre 8 et 20 caractères.";
         return false;
     }
 
     // Vérifie la présence de caractères spéciaux
     if (!preg_match('/[!@#$%^&*(),.?":{}|<>]/', $motdepasse)) {
+        $_SESSION['erreurs_inscription'][] = "Le mot de passe doit contenir au moins un caractère spécial.";
         return false;
     }
 
@@ -21,6 +25,7 @@ function est_motdepasse_valide($motdepasse) {
     if (!preg_match('/[a-z]/', $motdepasse) || 
         !preg_match('/[A-Z]/', $motdepasse) || 
         !preg_match('/[0-9]/', $motdepasse)) {
+        $_SESSION['erreurs_inscription'][] = "Le mot de passe doit contenir au moins une minuscule, une majuscule et un chiffre.";
         return false;
     }
 
@@ -70,17 +75,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Vérifier que le pseudo a au moins 5 caractères
     if (strlen($pseudo) < 5) {
-        $erreurs[] = "Le pseudo doit avoir au moins 5 caractères.";
+        $_SESSION['erreurs_inscription'][] = "Le pseudo doit avoir au moins 5 caractères.";
     }
 
     // Vérifier que les mots de passe correspondent
     if ($motdepasse !== $confirm_motdepasse) {
-        $erreurs[] = "Les mots de passe ne correspondent pas.";
+        $_SESSION['erreurs_inscription'][] = "Les mots de passe ne correspondent pas.";
     }
 
     // Vérifier la complexité du mot de passe
     if (!est_motdepasse_valide($motdepasse)) {
-        $erreurs[] = "Le mot de passe doit avoir entre 8 et 20 caractères, avec au moins une minuscule, une majuscule, un chiffre et un caractère spécial.";
+        // La fonction est_motdepasse_valide() ajoute déjà les erreurs à $_SESSION['erreurs_inscription']
     }
 
     // Vérifier l'unicité du pseudo et de l'adresse e-mail
@@ -90,21 +95,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     foreach ($resultat as $row) {
         if ($row['nom_utilisateur'] === $pseudo) {
-            $erreurs[] = "Le pseudo est déjà utilisé. Veuillez en choisir un autre.";
+            $_SESSION['erreurs_inscription'][] = "Le pseudo est déjà utilisé. Veuillez en choisir un autre.";
         }
         if ($row['email'] === $email) {
-            $erreurs[] = "L'adresse e-mail est déjà utilisée. Veuillez en choisir une autre.";
+            $_SESSION['erreurs_inscription'][] = "L'adresse e-mail est déjà utilisée. Veuillez en choisir une autre.";
         }
     }
 
     // Vérifier le domaine de l'adresse e-mail
     if (!est_domaine_valide($email)) {
-        $erreurs[] = "L'adresse e-mail n'est pas valide.";
+        $_SESSION['erreurs_inscription'][] = "L'adresse e-mail n'est pas valide.";
     }
 
-    // Si des erreurs sont survenues, stockez-les dans une variable de session
-    if (!empty($erreurs)) {
-        $_SESSION['erreurs_inscription'] = $erreurs;
+    // Si des erreurs sont survenues, redirigez vers la page d'inscription avec les erreurs
+    if (!empty($_SESSION['erreurs_inscription'])) {
         header("Location: ../Vues/inscription.php");
         exit();
     } else {
@@ -135,3 +139,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+<script>
+        function togglePassword(inputId) {
+            const passwordInput = document.getElementById(inputId);
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+            } else {
+                passwordInput.type = "password";
+            }
+        }
+    </script>

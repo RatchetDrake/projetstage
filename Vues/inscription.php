@@ -1,26 +1,18 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>Inscription</title>
-    <link rel="stylesheet" type="text/css" href="../css/style.css"> <!-- Modifié pour le chemin vers le CSS -->
+    <link rel="stylesheet" type="text/css" href="../Publique/Css/style.css">
 </head>
 <body>
     <div class="container">
         <h2>Inscription</h2>
 
-        <?php
-        session_start();
-        // Vérifiez s'il y a des erreurs d'inscription dans la session
-        if (isset($_SESSION['erreurs_inscription']) && !empty($_SESSION['erreurs_inscription'])) {
-            echo '<div style="color: red;">';
-            foreach ($_SESSION['erreurs_inscription'] as $erreur) {
-                echo $erreur . '<br>';
-            }
-            echo '</div>';
-            // Effacez les erreurs de la session après les avoir affichées
-            unset($_SESSION['erreurs_inscription']);
-        }
-        ?>
+       
 
         <form action="../Controle/inscription_ctrl.php" method="post"> <!-- Modifié pour le chemin vers le contrôleur -->
             <label for="pseudo">Pseudo :</label>
@@ -41,9 +33,12 @@
                 <input type="password" id="confirm_motdepasse" name="confirm_motdepasse" required onpaste="return false">
                 <span class="password-toggle" onclick="togglePassword('confirm_motdepasse')">👁️</span>
             </div>
-
+            <?php
+       include('../Controle/erreurs_ctrl.php');
+        ?>
             <br><br>
             <input type="submit" value="S'inscrire">
+        
         </form>
         <p>Déjà un compte ? <a href="connexion.php">Connectez-vous ici</a>.</p>
 
@@ -51,15 +46,8 @@
         <p>Mot de passe oublié ? <a href="../Vues/reinitialisation.php">Réinitialiser le mot de passe</a></p> <!-- Modifié pour le chemin -->
     </div>
 
-    <script>
-        function togglePassword(inputId) {
-            const passwordInput = document.getElementById(inputId);
-            if (passwordInput.type === "password") {
-                passwordInput.type = "text";
-            } else {
-                passwordInput.type = "password";
-            }
-        }
-    </script>
+    <?php 
+include('../Modele/script.php'); // Incluez le fichier script.php pour la fonction hide du mot de passe 
+    ?>
 </body>
 </html>

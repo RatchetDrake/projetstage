@@ -10,9 +10,9 @@ if (!isset($_SESSION['nom_utilisateur'])) {
 
 // Liste des pages autorisées pour chaque rôle
 $pages_autorisees = array(
-    1 => array('index.php', 'creationhistoire.php', 'explorerunivers.php', 'faq.php', 'forum.php'),
-    2 => array('indexM.php', 'creationhistoireM.php', 'explorerunivers.php', 'faq.php', 'forumM.php'),
-    3 => array('indexA.php', 'creationhistoireA.php', 'exploreruniversA.php', 'faq.php', 'forumA.php')
+    1 => array('index.php', 'creationhistoire.php', 'creationhistoire_ctrl.php', 'explorerunivers.php', 'faq.php', 'forum.php'),
+    2 => array('indexM.php', 'creationhistoireM.php', 'creationhistoireM_ctrl.php','explorerunivers.php', 'faq.php', 'forumM.php'),
+    3 => array('indexA.php', 'creationhistoireA.php', 'creationhistoireA_ctrl.php','exploreruniversA.php', 'faq.php', 'forumA.php')
 );
 
 // Récupérez le nom de la page courante

@@ -1,0 +1,217 @@
+/* Styles globaux */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'MedievalSharp';
+}
+
+/* Contact Card */
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+    gap: 4px;
+    position: absolute;
+    width: 403px;
+    height: 541px;
+    left: 65px;
+    top: 240px;
+    background: #996D35;
+    border-radius: 16px;
+    margin-left: 100px; /* Ajout de marge à gauche */
+    margin-right: 10px; /* Ajout de marge à droite */
+}
+
+/* Frame 2 */
+.frame-2 {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 8px;
+    gap: 10px;
+    width: 371px;
+    height: 43px;
+}
+
+/* Liste des Histoires */
+.liste-histoires {
+    width: 355px;
+    height: 27px;
+    font-family: 'MedievalSharp';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 27px;
+    color: #000000;
+}
+
+/* Cell */
+.cell {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 4px 8px;
+    gap: 8px;
+    width: 371px;
+    height: 72px;
+    cursor: pointer; /* Ajout d'un pointeur de souris pour indiquer la clicabilité */
+}
+
+/* Avatar */
+.avatar {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 8px;
+    gap: 10px;
+    width: 65.1px;
+    height: 64px;
+    background: #FFFFFF;
+    border: 2px solid #E1E9F1;
+    border-radius: 78px;
+}
+
+/* Metadata */
+.metadata {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 4px;
+    width: 261.9px;
+    height: 32px;
+}
+
+/* Histoire N° 1 */
+.histoire-1 {
+    width: 261.9px;
+    height: 14px;
+    font-family: 'MedievalSharp';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+    color: #000000;
+}
+
+/* Histoire N° 2 */
+.histoire-2 {
+    width: 261.9px;
+    height: 14px;
+    font-family: 'MedievalSharp';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+    color: #000000; /* Couleur pour l'histoire 2 */
+}
+
+/* Histoire N° 3 */
+.histoire-3 {
+    width: 261.9px;
+    height: 14px;
+    font-family: 'MedievalSharp';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+    color: #db0000; /* Couleur pour l'histoire 3 */
+}
+
+/* Histoire N° 4 */
+.histoire-4 {
+    width: 261.9px;
+    height: 14px;
+    font-family: 'MedievalSharp';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+    color: #000000; /* Couleur pour l'histoire 4 */
+}
+
+/* Histoire N° 5 */
+.histoire-5 {
+    width: 261.9px;
+    height: 14px;
+    font-family: 'MedievalSharp';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+    color: #000000; /* Couleur pour l'histoire 5 */
+}
+
+/* Histoire N° 6 */
+.histoire-6 {
+    width: 261.9px;
+    height: 14px;
+    font-family: 'MedievalSharp';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+    color: #000000; /* Couleur pour l'histoire 6 */
+}
+
+/* Les Chroniques de l'Épée Perdue */
+.chroniques-epée-perdue {
+    width: 261.9px;
+    height: 14px;
+    font-family: 'MedievalSharp';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    color: #000000;
+}
+
+/* Menu Vertical */
+.menu-vertical {
+    width: 12px;
+    height: 16px;
+    background: url(.png);
+}
+
+/* Conteneur pour afficher le texte de l'histoire */
+.histoire-texte {
+    position: absolute;
+    top: 240px; /* Ajustez la position verticale pour aligner avec la carte */
+    right: 0;
+    width: 30%; /* Ajustez la largeur comme souhaité */
+    max-height: calc(100% - 240px); /* Limite la hauteur pour éviter le chevauchement de la barre de navigation */
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    overflow-y: scroll; /* Ajout de défilement vertical si le texte est long */
+    padding: 20px;
+    font-family: 'MedievalSharp';
+    font-size: 14px;
+    line-height: 1.5;
+    color: #000000;
+    margin-left: 20px; /* Ajout de marge à gauche */
+    margin-right: 20px; /* Ajout de marge à droite */
+}
+
+/* Styles pour les écrans de bureau (largeur minimale de 1024px) */
+@media (min-width: 1024px) {
+    /* Ajoutez ici vos styles spécifiques pour les écrans de bureau */
+}
+
+/* Styles pour les tablettes (largeur minimale de 768px) et les écrans de bureau plus petits */
+@media (max-width: 1023px) {
+    /* Réduisez la largeur de la contact-card pour éviter le chevauchement */
+    .contact-card {
+        width: 100%; /* Utilisez toute la largeur disponible */
+        left: 0; /* Réinitialisez la position à gauche */
+        margin: 0; /* Réinitialisez les marges */
+    }
+    
+    /* Ajoutez ici d'autres styles de mise en page pour les tablettes et les écrans de bureau plus petits */
+}
+
+/* Styles pour les écrans mobiles (largeur maximale de 767px) */
+@media (max-width: 767px) {
+    /* Ajoutez ici vos styles spécifiques pour les écrans mobiles */
+}

@@ -9,7 +9,7 @@
 <nav>
     <div class="logo">
         <!-- Remplacez par votre image de logo ou du texte si vous n'en avez pas -->
-        <img src="chemin_vers_votre_logo.png" alt="Logo">
+        <img src="../Publique/images/logo.png" alt="Logo" class="logo-image">
     </div>
     <ul>
         <!-- Utilisez PHP pour changer les liens selon le rôle de l'utilisateur -->

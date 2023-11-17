@@ -11,7 +11,7 @@ body {
     max-width: 300px;
     margin: 50px auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: aliceblue;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 }
@@ -108,6 +108,15 @@ nav {
 .logo {
     font-size: 24px;
     color: #FFF;
+    /* Ajoutez ces règles pour redimensionner le logo */
+    display: flex;
+    align-items: center;
+}
+
+/* Style pour l'image du logo */
+.logo-image {
+    max-width: 100px; /* Ajustez la largeur maximale selon vos besoins */
+    height: auto; /* Garantit que la hauteur s'ajuste proportionnellement à la largeur */
 }
 
 /* Style pour la liste de navigation */

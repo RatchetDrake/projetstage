@@ -97,4 +97,17 @@ document.getElementById('modifier-titre').addEventListener('submit', function(e)
     // Effacer le champ de texte du formulaire
     document.getElementById('nouveau-titre').value = '';
 });
+
+    // Gestionnaire pour la soumission du formulaire
+    document.getElementById('proposer-suite').addEventListener('submit', function(e) {
+        const ordreSelect = document.getElementById('ordre');
+        
+        // Vérifier si l'option par défaut a été sélectionnée
+        if (ordreSelect.value === "") {
+            alert("Veuillez choisir une histoire avant de soumettre le formulaire.");
+            e.preventDefault(); // Empêcher la soumission du formulaire
+        }
+    });
+
+
 </script>

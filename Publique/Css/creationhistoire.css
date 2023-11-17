@@ -2,25 +2,33 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'MedievalSharp';
+    font-family: 'MedievalSharp';   
+    background-color: #d2b48c; /* Couleur de fond pour le body */
+}
+
+/* Conteneur global */
+.containerC {
+    display: flex;
+    flex-direction: row; /* Affiche les éléments côte à côte */
+    justify-content: space-between; /* Espacez les éléments horizontalement */
+    align-items: flex-start; /* Alignez-les en haut */
+    max-width: 1200px; /* Limite la largeur du conteneur */
+    margin: 0 auto; /* Centre le conteneur horizontalement */
+    padding: 20px;
+    background-color: rgb(97, 39, 0);
 }
 
 /* Contact Card */
 .contact-card {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     padding: 16px;
     gap: 4px;
-    position: absolute;
-    width: 403px;
-    height: 541px;
-    left: 65px;
-    top: 240px;
     background: #996D35;
     border-radius: 16px;
-    margin-left: 100px; /* Ajout de marge à gauche */
-    margin-right: 10px; /* Ajout de marge à droite */
+    max-width: 600px; /* Limite la largeur de la carte */
+    margin-right: 20px; /* Ajout de marge à droite pour espacer de la liste des histoires */
 }
 
 /* Frame 2 */
@@ -30,20 +38,19 @@ body {
     align-items: flex-start;
     padding: 8px;
     gap: 10px;
-    width: 371px;
-    height: 43px;
+    width: 100%;
 }
 
 /* Liste des Histoires */
 .liste-histoires {
-    width: 355px;
-    height: 27px;
+    width: 100%;
     font-family: 'MedievalSharp';
     font-style: normal;
     font-weight: 500;
     font-size: 24px;
     line-height: 27px;
     color: #000000;
+    text-align: center;
 }
 
 /* Cell */
@@ -53,9 +60,11 @@ body {
     align-items: center;
     padding: 4px 8px;
     gap: 8px;
-    width: 371px;
-    height: 72px;
-    cursor: pointer; /* Ajout d'un pointeur de souris pour indiquer la clicabilité */
+    width: 100%;
+    cursor: pointer;
+    background-color: maroon;
+    border-radius: 8px;
+    margin-bottom: 10px;
 }
 
 /* Avatar */
@@ -66,11 +75,19 @@ body {
     align-items: flex-start;
     padding: 8px;
     gap: 10px;
-    width: 65.1px;
-    height: 64px;
-    background: #FFFFFF;
-    border: 2px solid #E1E9F1;
+    width: 140px; /* Largeur de l'avatar */
+    height: 100px; /* Hauteur de l'avatar */
+    background: none;
+    border: 2px solid none;
     border-radius: 78px;
+    overflow: hidden; /* Masquer toute partie de l'image qui dépasse les limites de l'avatar */
+}
+
+/* Ajuster la taille et la position de l'image à l'intérieur de l'avatar */
+.avatar img {
+    width: 150%; /* Largeur de l'image à 150% de la taille de l'avatar */
+    height: 150%; /* Hauteur de l'image à 150% de la taille de l'avatar */
+    margin: -24% -26%; /* Ajustez les valeurs négatives pour déplacer l'image vers le haut et la gauche */
 }
 
 /* Metadata */
@@ -80,118 +97,67 @@ body {
     align-items: flex-start;
     padding: 0px;
     gap: 4px;
-    width: 261.9px;
-    height: 32px;
+    width: 100%;
 }
 
-/* Histoire N° 1 */
-.histoire-1 {
-    width: 261.9px;
-    height: 14px;
+/* Histoire N° */
+.histoire-1,
+.histoire-2,
+.histoire-3,
+.histoire-4,
+.histoire-5,
+.histoire-6 {
+    width: 100%;
     font-family: 'MedievalSharp';
     font-style: normal;
     font-weight: 700;
     font-size: 12px;
     line-height: 14px;
     color: #000000;
-}
-
-/* Histoire N° 2 */
-.histoire-2 {
-    width: 261.9px;
-    height: 14px;
-    font-family: 'MedievalSharp';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 14px;
-    color: #000000; /* Couleur pour l'histoire 2 */
-}
-
-/* Histoire N° 3 */
-.histoire-3 {
-    width: 261.9px;
-    height: 14px;
-    font-family: 'MedievalSharp';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 14px;
-    color: #db0000; /* Couleur pour l'histoire 3 */
-}
-
-/* Histoire N° 4 */
-.histoire-4 {
-    width: 261.9px;
-    height: 14px;
-    font-family: 'MedievalSharp';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 14px;
-    color: #000000; /* Couleur pour l'histoire 4 */
-}
-
-/* Histoire N° 5 */
-.histoire-5 {
-    width: 261.9px;
-    height: 14px;
-    font-family: 'MedievalSharp';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 14px;
-    color: #000000; /* Couleur pour l'histoire 5 */
-}
-
-/* Histoire N° 6 */
-.histoire-6 {
-    width: 261.9px;
-    height: 14px;
-    font-family: 'MedievalSharp';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 14px;
-    color: #000000; /* Couleur pour l'histoire 6 */
+    text-align: center;
 }
 
 /* Les Chroniques de l'Épée Perdue */
 .chroniques-epée-perdue {
-    width: 261.9px;
-    height: 14px;
+    width: 100%;
     font-family: 'MedievalSharp';
     font-style: normal;
     font-weight: 500;
     font-size: 12px;
     line-height: 14px;
     color: #000000;
+    text-align: center;
 }
 
-/* Menu Vertical */
-.menu-vertical {
-    width: 12px;
-    height: 16px;
-    background: url(.png);
+/* Formulaire */
+.histoire-form {
+ 
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 600px; /* Limite la largeur du formulaire */
+    margin: 0 auto; /* Centre le formulaire horizontalement */
+    padding: 20px;
+    background-color: #FFFFFF; /* Couleur de fond du formulaire */
+    border-radius: 16px;
+    margin-top: 20px; /* Ajout de marge en haut pour espacer de la liste des histoires */
 }
 
 /* Conteneur pour afficher le texte de l'histoire */
 .histoire-texte {
-    position: absolute;
-    top: 240px; /* Ajustez la position verticale pour aligner avec la carte */
-    right: 0;
-    width: 30%; /* Ajustez la largeur comme souhaité */
-    max-height: calc(100% - 240px); /* Limite la hauteur pour éviter le chevauchement de la barre de navigation */
-    background-color: #FFFFFF;
+    min-width: 200px;
+    max-width: 600px; /* Limite la largeur de l'histoire */
+    margin: 0 auto; /* Centre l'histoire horizontalement */
+    padding: 20px;
+    background-color: #FFFFFF; /* Restauration de la couleur de fond */
     border-radius: 8px;
     overflow-y: scroll; /* Ajout de défilement vertical si le texte est long */
-    padding: 20px;
     font-family: 'MedievalSharp';
-    font-size: 14px;
+    font-size: 12px;
     line-height: 1.5;
     color: #000000;
-    margin-left: 20px; /* Ajout de marge à gauche */
-    margin-right: 20px; /* Ajout de marge à droite */
+    margin-top: 20px; /* Ajout de marge en haut pour espacer du formulaire */
+    text-align: center; /* Centre le texte horizontalement */
 }
 
 /* Styles pour les écrans de bureau (largeur minimale de 1024px) */
@@ -201,13 +167,6 @@ body {
 
 /* Styles pour les tablettes (largeur minimale de 768px) et les écrans de bureau plus petits */
 @media (max-width: 1023px) {
-    /* Réduisez la largeur de la contact-card pour éviter le chevauchement */
-    .contact-card {
-        width: 100%; /* Utilisez toute la largeur disponible */
-        left: 0; /* Réinitialisez la position à gauche */
-        margin: 0; /* Réinitialisez les marges */
-    }
-    
     /* Ajoutez ici d'autres styles de mise en page pour les tablettes et les écrans de bureau plus petits */
 }
 

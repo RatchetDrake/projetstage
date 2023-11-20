@@ -19,7 +19,7 @@ include('../Modele/connexionBDD.php');
             <!-- Histoire 1 -->
             <div class="cell" id="histoire-1">
                 <div class="avatar">
-                    <img src="../images/votre-image-1.jpg" alt="Image de l'histoire 1">
+                    <img src="../Publique/images/logohistoire2.png" alt="Image de l'histoire 1">
                 </div>
                 <div class="metadata">
                     <div class="histoire-1">Histoire N° 1</div>

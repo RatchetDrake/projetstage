@@ -11,6 +11,8 @@ include('../Modele/connexionBDD.php');
     <link rel="stylesheet" href="../Publique/Css/creationhistoire.css">
 </head>
 <body>
+<div id="background-left"></div>
+<div id="background-right"></div>
     <div class="containerC">
         <div class="contact-card">
             <div class="frame-2">
@@ -139,6 +141,7 @@ include('../Modele/connexionBDD.php');
 
             <br><button type="submit">Proposer la suite</button>
         </form>
+        
         </div>
 
        

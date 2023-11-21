@@ -44,4 +44,10 @@
             });
         }
     }
+    
+    // Fonction pour gérer la notation
+    function handleRatingClick(starIndex, histoireIndex) {
+        // Envoyer la note au serveur ou effectuer d'autres actions ici
+        alert(`Vous avez donné ${starIndex + 1} étoiles à l'histoire ${histoireIndex}.`);
+    }
 </script>

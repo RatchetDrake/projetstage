@@ -175,3 +175,32 @@ body {
 @media (max-width: 767px) {
     /* Ajoutez ici vos styles spécifiques pour les écrans mobiles */
 }
+#background-left {
+    position: fixed;
+    top: 0;
+    left: -19%;
+    width: 50%; /* ou la taille que vous souhaitez */
+    height: 100%;
+    background-image: url('../images/fondGauche.png');
+    background-size: cover; /* ou ajustez selon vos besoins */
+    z-index: -1; /* assurez-vous qu'il reste en arrière-plan */
+  }
+  
+  #background-right {
+    position: fixed;
+    top: 0;
+    right: -15%;
+    width: 50%; /* ou la taille que vous souhaitez */
+    height: 100%;
+    background-image: url('../images/fondDroit.png');
+    background-size: cover; /* ou ajustez selon vos besoins */
+    z-index: -1; /* assurez-vous qu'il reste en arrière-plan */
+  }
+  
+  .content {
+    background-color: rgba(244,234,210,255);
+    position: relative;
+    z-index: 1; /* cela le met au-dessus des images de fond */
+    /* Plus de styles pour le contenu ici */
+  }
+  

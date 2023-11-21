@@ -9,7 +9,8 @@
 <body>
 
 <?php include('../Controle/index_ctrl.php'); ?>
-
+<div id="background-left"></div>
+<div id="background-right"></div>
 <div class="content">
   <div class="image-container-left">
     <img src="../Publique/images/Imagegauche.PNG" alt="Description de la première image" class="image-1">

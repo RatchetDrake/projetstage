@@ -1,7 +1,7 @@
 /* Style général du corps de la page */
 body {
     font-family: 'MedievalSharp', serif; /* Appliquer la police MedievalSharp à tous les éléments du texte */
-    background-color: #d2b48c; /* Couleur brun clair pour le fond */
+    background-color: rgba(244,234,210,255); /* Couleur brun clair pour le fond */
     margin: 0;
     padding: 0;
 }
@@ -97,11 +97,17 @@ html, body {
 /* Style de base pour la barre de navigation */
 nav {
     background-color: #8B4513;
-    color: white;
+    color: red;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
+    background-image: url('../images/Nav.png');
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover; /* ou 'contain' si vous souhaitez que toute l'image soit visible */
+  height: 120px; /* la hauteur de votre barre de navigation */
+  width: 100%;
 }
 
 /* Style pour le logo */
@@ -134,9 +140,11 @@ nav ul li {
 
 /* Style pour les liens de la barre de navigation */
 nav ul li a {
-    color: #FFF;
+    color: black;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 30px;
+    background-color: burlywood;
+
 }
 
 nav ul li a:hover {
@@ -163,3 +171,37 @@ nav ul li a:hover {
     font-weight: normal;
     font-style: normal;
 }
+#background-left {
+    position: fixed;
+    top: 0;
+    left: -19%;
+    width: 50%; /* ou la taille que vous souhaitez */
+    height: 100%;
+    background-image: url('../images/fondGauche.png');
+    background-size: cover; /* ou ajustez selon vos besoins */
+    z-index: -1; /* assurez-vous qu'il reste en arrière-plan */
+  }
+  
+  #background-right {
+    position: fixed;
+    top: 0;
+    right: -15%;
+    width: 50%; /* ou la taille que vous souhaitez */
+    height: 100%;
+    background-image: url('../images/fondDroit.png');
+    background-size: cover; /* ou ajustez selon vos besoins */
+    z-index: -1; /* assurez-vous qu'il reste en arrière-plan */
+  }
+  
+  .content {
+    background-color: rgba(244,234,210,255);
+    position: relative;
+    z-index: 1; /* cela le met au-dessus des images de fond */
+    /* Plus de styles pour le contenu ici */
+  }
+  /* Styles pour le "C" de "Créer" */
+.grand-rouge {
+    font-size: 37px; /* Taille de police plus grande */
+    color: red; /* Couleur rouge */
+  }
+  

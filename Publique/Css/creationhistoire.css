@@ -12,7 +12,7 @@ body {
     flex-direction: row; /* Affiche les éléments côte à côte */
     justify-content: space-between; /* Espacez les éléments horizontalement */
     align-items: flex-start; /* Alignez-les en haut */
-    max-width: 1200px; /* Limite la largeur du conteneur */
+    max-width: 1600px; /* Limite la largeur du conteneur */
     margin: 0 auto; /* Centre le conteneur horizontalement */
     padding: 20px;
     background-color: rgb(97, 39, 0);
@@ -27,7 +27,7 @@ body {
     gap: 4px;
     background: #996D35;
     border-radius: 16px;
-    max-width: 600px; /* Limite la largeur de la carte */
+    max-width: 1600px; /* Limite la largeur de la carte */
     margin-right: 20px; /* Ajout de marge à droite pour espacer de la liste des histoires */
 }
 
@@ -75,19 +75,18 @@ body {
     align-items: flex-start;
     padding: 8px;
     gap: 10px;
-    width: 140px; /* Largeur de l'avatar */
-    height: 100px; /* Hauteur de l'avatar */
+    width: 250px; /* Largeur de l'avatar */
+    height: 150px; /* Hauteur de l'avatar */
     background: none;
     border: 2px solid none;
     border-radius: 78px;
     overflow: hidden; /* Masquer toute partie de l'image qui dépasse les limites de l'avatar */
 }
 
-/* Ajuster la taille et la position de l'image à l'intérieur de l'avatar */
 .avatar img {
-    width: 150%; /* Largeur de l'image à 150% de la taille de l'avatar */
-    height: 150%; /* Hauteur de l'image à 150% de la taille de l'avatar */
-    margin: -24% -26%; /* Ajustez les valeurs négatives pour déplacer l'image vers le haut et la gauche */
+    width: 80%;
+    height: 120%;
+    margin: auto;
 }
 
 /* Metadata */
@@ -111,8 +110,7 @@ body {
     font-family: 'MedievalSharp';
     font-style: normal;
     font-weight: 700;
-    font-size: 12px;
-    line-height: 14px;
+    font-size: 24px;
     color: #000000;
     text-align: center;
 }
@@ -123,7 +121,7 @@ body {
     font-family: 'MedievalSharp';
     font-style: normal;
     font-weight: 500;
-    font-size: 12px;
+    font-size: 20px;
     line-height: 14px;
     color: #000000;
     text-align: center;
@@ -175,32 +173,36 @@ body {
 @media (max-width: 767px) {
     /* Ajoutez ici vos styles spécifiques pour les écrans mobiles */
 }
-#background-left {
-    position: fixed;
-    top: 0;
-    left: -19%;
-    width: 50%; /* ou la taille que vous souhaitez */
-    height: 100%;
-    background-image: url('../images/fondGauche.png');
-    background-size: cover; /* ou ajustez selon vos besoins */
-    z-index: -1; /* assurez-vous qu'il reste en arrière-plan */
-  }
-  
-  #background-right {
-    position: fixed;
-    top: 0;
-    right: -15%;
-    width: 50%; /* ou la taille que vous souhaitez */
-    height: 100%;
-    background-image: url('../images/fondDroit.png');
-    background-size: cover; /* ou ajustez selon vos besoins */
-    z-index: -1; /* assurez-vous qu'il reste en arrière-plan */
-  }
-  
-  .content {
-    background-color: rgba(244,234,210,255);
-    position: relative;
-    z-index: 1; /* cela le met au-dessus des images de fond */
-    /* Plus de styles pour le contenu ici */
-  }
-  
+#formetoile{
+
+    max-width: 300px;
+    padding: 20px;
+    background-color: aliceblue;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}.cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrer horizontalement */
+    text-align: center; /* Centrer le texte */
+    margin-bottom: 20px; /* Espace entre les cellules */
+}
+
+.metadata {
+    margin-bottom: 10px; /* Espace entre l'univers/nom et l'avatar */
+}
+
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff; /* Couleur de fond de vos boutons */
+    color: #fff; /* Couleur du texte de vos boutons */
+    text-decoration: none; /* Pour supprimer le soulignement des liens */
+    margin-right: 10px; /* Espacement entre les boutons */
+    border-radius: 5px; /* Coins arrondis */
+}
+
+.button:hover {
+    background-color: #0056b3; /* Couleur de fond au survol */
+}

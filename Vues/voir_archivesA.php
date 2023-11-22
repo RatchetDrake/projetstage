@@ -10,5 +10,5 @@ if (!isset($_SESSION['nom_utilisateur'])) {
     exit();
 }
 
-
+include('../Modele/header.php');
 ?>

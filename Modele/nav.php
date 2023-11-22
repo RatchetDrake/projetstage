@@ -28,27 +28,23 @@
     </ul>
     
 </div>
-<div class="deconnexion-button">
+<div class="deconnexion-button"><?php
+    if (isset($_SESSION['nom_utilisateur'])) {
+        echo 'Bienvenue, ' . htmlspecialchars($_SESSION['nom_utilisateur']);
+    }
+    ?><br>
     <?php
     if (isset($_SESSION['nom_utilisateur'])) {
         echo '<a href="../Controle/deconnexion.php">Déconnexion</a>';
     }
     ?>
     <div class="user-info" style="text-align: center;">
-    <?php
-    if (isset($_SESSION['nom_utilisateur'])) {
-        echo 'Bienvenue, ' . htmlspecialchars($_SESSION['nom_utilisateur']);
-    }
-    ?>
+    
 </div>
 
 
 </nav>
 
-<!-- Le reste de la page HTML -->
-<div id="content">
-    <!-- Le contenu de votre page ira ici -->
-</div>
 
 </body>
 </html>

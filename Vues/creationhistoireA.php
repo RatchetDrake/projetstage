@@ -18,101 +18,142 @@ include('../Modele/connexionBDD.php');
             <div class="frame-2">
                 <div class="liste-histoires">Liste des Histoires</div>
             </div>
-
-            <!-- Histoire 1 -->
-            <div class="cell" id="histoire-1">
-                <div class="avatar">
-                    <img src="../Publique/images/logohistoire2.png" alt="Image de l'histoire 1">
-                </div>
-                <div class="metadata">
-                    <div class="histoire-1">Univers Mediéval</div>
-                    <div class="chroniques-epée-perdue">Les Chroniques de l'Épée Perdue</div>
-                    <div class="menu-vertical"></div>
-                </div>
+           <!-- Histoire 1 -->
+<div class="cell" id="histoire-1">
+    <div class="metadata">
+        <div class="histoire-1">Univers Médiéval</div>
+        <div class="chroniques-epée-perdue">Les Chroniques de l'Épée Perdue</div>
+    </div>
+    <div class="avatar">
+        <img src="../Publique/images/logohistoire2.png" alt="Image de l'histoire 1">
+    </div>
                 <!-- Système de notation en 5 étoiles pour l'histoire 1 -->
-                <div class="rating" id="rating-1">
-                    <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                </div>
+                <form method="POST" id="formetoile-1" action="../Controle/note.ctrl.php">
+                    <input type="hidden" name="ordre" value="1"> <!-- L'ordre de l'histoire -->
+                    <div class="rating-vertical" id="rating-1">
+                        <input type="radio" id="note1-1" name="note" value="1">1☆<br>
+                        <input type="radio" id="note2-1" name="note" value="2">2☆<br>
+                        <input type="radio" id="note3-1" name="note" value="3">3☆<br>
+                        <input type="radio" id="note4-1" name="note" value="4">4☆<br>
+                        <input type="radio" id="note5-1" name="note" value="5">5☆<br>
+                    </div>
+                    <button type="submit">Envoyer la note</button>
+                </form>
             </div>
 
-            <!-- Histoire 2 -->
-            <div class="cell" id="histoire-2">
-                <div class="avatar">
-                    <img src="../Publique/images/logohistoire1.png" alt="Image de l'histoire 2">
-                </div>
-                <div class="metadata">
-                    <div class="histoire-1">Univers de Science-Fiction</div>
-                    <div class="chroniques-epée-perdue">L'Odyssée de l'Étoile d'Argent</div>
-                    <div class="menu-vertical"></div>
-                </div>
+         <!-- Histoire 2 -->
+<div class="cell" id="histoire-2">
+    <div class="metadata">
+        <div class="histoire-1">Univers de Science-Fiction</div>
+        <div class="chroniques-epée-perdue">L'Odyssée de l'Étoile d'Argent</div>
+    </div>
+    <div class="avatar">
+        <img src="../Publique/images/logohistoire1.png" alt="Image de l'histoire 2">
+    </div>
                 <!-- Système de notation en 5 étoiles pour l'histoire 2 -->
-                <div class="rating" id="rating-2">
-                    <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                </div>
+                <form method="POST" id="formetoile-2" action="../Controle/note.ctrl.php">
+                    <input type="hidden" name="ordre" value="2"> <!-- L'ordre de l'histoire -->
+                    <div class="rating-vertical" id="rating-2">
+                        <input type="radio" id="note1-2" name="note" value="1">1☆<br>
+                        <input type="radio" id="note2-2" name="note" value="2">2☆<br>
+                        <input type="radio" id="note3-2" name="note" value="3">3☆<br>
+                        <input type="radio" id="note4-2" name="note" value="4">4☆<br>
+                        <input type="radio" id="note5-2" name="note" value="5">5☆<br>
+                    </div>
+                    <button type="submit">Envoyer la note</button>
+                </form>
             </div>
 
-            <!-- Histoire 3 -->
-            <div class="cell" id="histoire-3">
-                <div class="avatar">
-                    <img src="../Publique/images/logohistoire3.png" alt="Image de l'histoire 3">
-                </div>
-                <div class="metadata">
-                    <div class="histoire-1">Univers de Western</div>
-                    <div class="chroniques-epée-perdue">Le Shérif de Dusty Gulch</div>
-                    <div class="menu-vertical"></div>
-                </div>
+           <!-- Histoire 3 -->
+<div class="cell" id="histoire-3">
+    <div class="metadata">
+        <div class="histoire-1">Univers de Western</div>
+        <div class="chroniques-epée-perdue">Le Shérif de Dusty Gulch</div>
+    </div>
+    <div class="avatar">
+        <img src="../Publique/images/logohistoire3.png" alt="Image de l'histoire 3">
+    </div>
                 <!-- Système de notation en 5 étoiles pour l'histoire 3 -->
-                <div class="rating" id="rating-3">
-                    <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                </div>
+                <form method="POST" id="formetoile-3" action="../Controle/note.ctrl.php">
+                    <input type="hidden" name="ordre" value="3"> <!-- L'ordre de l'histoire -->
+                    <div class="rating-vertical" id="rating-3">
+                        <input type="radio" id="note1-3" name="note" value="1">1☆<br>
+                        <input type="radio" id="note2-3" name="note" value="2">2☆<br>
+                        <input type="radio" id="note3-3" name="note" value="3">3☆<br>
+                        <input type="radio" id="note4-3" name="note" value="4">4☆<br>
+                        <input type="radio" id="note5-3" name="note" value="5">5☆<br>
+                    </div>
+                    <button type="submit">Envoyer la note</button>
+                </form>
             </div>
 
-            <!-- Histoire 4 -->
-            <div class="cell" id="histoire-4">
-                <div class="avatar">
-                    <img src="../Publique/images/logohistoire4.png" alt="Image de l'histoire 4">
-                </div>
-                <div class="metadata">
-                    <div class="histoire-1">Univers Magique</div>
-                    <div class="chroniques-epée-perdue">La Quête d'Elara</div>
-                    <div class="menu-vertical"></div>
-                </div>
+           <!-- Histoire 4 -->
+<div class="cell" id="histoire-4">
+    <div class="metadata">
+        <div class="histoire-1">Univers Magique</div>
+        <div class="chroniques-epée-perdue">La Quête d'Elara</div>
+    </div>
+    <div class="avatar">
+        <img src="../Publique/images/logohistoire4.png" alt="Image de l'histoire 4">
+    </div>
                 <!-- Système de notation en 5 étoiles pour l'histoire 4 -->
-                <div class="rating" id="rating-4">
-                    <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                </div>
+                <form method="POST" id="formetoile-4" action="../Controle/note.ctrl.php">
+                    <input type="hidden" name="ordre" value="4"> <!-- L'ordre de l'histoire -->
+                    <div class="rating-vertical" id="rating-4">
+                        <input type="radio" id="note1-4" name="note" value="1">1☆<br>
+                        <input type="radio" id="note2-4" name="note" value="2">2☆<br>
+                        <input type="radio" id="note3-4" name="note" value="3">3☆<br>
+                        <input type="radio" id="note4-4" name="note" value="4">4☆<br>
+                        <input type="radio" id="note5-4" name="note" value="5">5☆<br>
+                    </div>
+                    <button type="submit">Envoyer la note</button>
+                </form>
             </div>
 
-            <!-- Histoire 5 -->
-            <div class="cell" id="histoire-5">
-                <div class="avatar">
-                    <img src="../Publique/images/logohistoire5.png" alt="Image de l'histoire 5">
-                </div>
-                <div class="metadata">
-                    <div class="histoire-1">Univers Post-Apocalypse</div>
-                    <div class="chroniques-epée-perdue">Les Errants de l'Apocalypse"</div>
-                    <div class="menu-vertical"></div>
-                </div>
+           <!-- Histoire 5 -->
+<div class="cell" id="histoire-5">
+    <div class="metadata">
+        <div class="histoire-1">Univers Post-Apocalypse</div>
+        <div class="chroniques-epée-perdue">Les Errants de l'Apocalypse"</div>
+    </div>
+    <div class="avatar">
+        <img src="../Publique/images/logohistoire5.png" alt="Image de l'histoire 5">
+    </div>
                 <!-- Système de notation en 5 étoiles pour l'histoire 5 -->
-                <div class="rating" id="rating-5">
-                    <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                </div>
+                <form method="POST" id="formetoile-5" action="../Controle/note.ctrl.php">
+                    <input type="hidden" name="ordre" value="5"> <!-- L'ordre de l'histoire -->
+                    <div class="rating-vertical" id="rating-5">
+                        <input type="radio" id="note1-5" name="note" value="1">1☆<br>
+                        <input type="radio" id="note2-5" name="note" value="2">2☆<br>
+                        <input type="radio" id="note3-5" name="note" value="3">3☆<br>
+                        <input type="radio" id="note4-5" name="note" value="4">4☆<br>
+                        <input type="radio" id="note5-5" name="note" value="5">5☆<br>
+                    </div>
+                    <button type="submit">Envoyer la note</button>
+                </form>
             </div>
 
-            <!-- Histoire 6 -->
-            <div class="cell" id="histoire-6">
-                <div class="avatar">
-                    <img src="../Publique/images/logohistoire6.png" alt="Image de l'histoire 6">
-                </div>
-                <div class="metadata">
-                    <div class="histoire-1">Univers de Super-Héros</div>
-                    <div class="chroniques-epée-perdue">Les Antihéros Incontrôlables</div>
-                    <div class="menu-vertical"></div>
-                </div>
+             <!-- Histoire 6 -->
+<div class="cell" id="histoire-6">
+    <div class="metadata">
+        <div class="histoire-1">Univers de Super-Héros</div>
+        <div class="chroniques-epée-perdue">Les Antihéros Incontrôlables</div>
+    </div>
+    <div class="avatar">
+        <img src="../Publique/images/logohistoire6.png" alt="Image de l'histoire 6">
+    </div>
                 <!-- Système de notation en 5 étoiles pour l'histoire 6 -->
-                <div class="rating" id="rating-6">
-                    <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                </div>
+                <form method="POST" id="formetoile-6" action="../Controle/note.ctrl.php">
+                    <input type="hidden" name="ordre" value="6"> <!-- L'ordre de l'histoire -->
+                    <div class="rating-vertical" id="rating-6">
+                        <input type="radio" id="note1-6" name="note" value="1">1☆<br>
+                        <input type="radio" id="note2-6" name="note" value="2">2☆<br>
+                        <input type="radio" id="note3-6" name="note" value="3">3☆<br>
+                        <input type="radio" id="note4-6" name="note" value="4">4☆<br>
+                        <input type="radio" id="note5-6" name="note" value="5">5☆<br>
+                    </div>
+                    <button type="submit">Envoyer la note</button>
+                </form>
             </div>
  
             </div>
@@ -141,9 +182,14 @@ include('../Modele/connexionBDD.php');
 
             <br><button type="submit">Proposer la suite</button>
         </form>
+        
         </div>
 
-       
+        <div class="buttons-container">
+    <a href="voir_propositionA.php" class="button">Propositions</a>
+    <a href="voir_archivesA.php" class="button">Archives</a>
+</div>
+  
         <?php include("../Modele/scriptcreation.php") ?>
     </div>
     

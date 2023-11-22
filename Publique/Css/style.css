@@ -58,7 +58,10 @@ input[type="submit"]:hover {
 /* Style des liens */
 a {
     text-decoration: none;
-    color: #5cb85c;
+    color: black;
+   
+  
+    
 }
 
 a:hover {
@@ -96,12 +99,11 @@ html, body {
 
 /* Style de base pour la barre de navigation */
 nav {
-    background-color: #8B4513;
-    color: red;
+    font-size: 27px;
+    color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
     background-image: url('../images/Nav.png');
   background-repeat: no-repeat;
   background-position: center top;
@@ -144,21 +146,24 @@ nav ul li a {
     text-decoration: none;
     font-size: 30px;
     background-color: burlywood;
-
+    opacity: 0.9; /* Réduit l'opacité de l'arrière-plan */
 }
 
 nav ul li a:hover {
     text-decoration: underline;
+    
 }
 
 /* Style pour les informations utilisateur */
 .user-info {
     text-align: right;
+    margin-right: 500px;
 }
 
 .user-info a {
     color: #FFF;
     text-decoration: none;
+    
 }
 
 .user-info a:hover {
@@ -204,4 +209,7 @@ nav ul li a:hover {
     font-size: 37px; /* Taille de police plus grande */
     color: red; /* Couleur rouge */
   }
-  
+  body {
+    background-color: #f0f0f0;
+    text-align: center;
+  }

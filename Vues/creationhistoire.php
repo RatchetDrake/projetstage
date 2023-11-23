@@ -27,6 +27,7 @@ include('../Modele/connexionBDD.php');
     <div class="avatar">
         <img src="../Publique/images/logohistoire2.png" alt="Image de l'histoire 1">
     </div>
+    
                 <!-- Système de notation en 5 étoiles pour l'histoire 1 -->
                 <form method="POST" id="formetoile-1" action="../Controle/note.ctrl.php">
                     <input type="hidden" name="ordre" value="1"> <!-- L'ordre de l'histoire -->
@@ -160,7 +161,12 @@ include('../Modele/connexionBDD.php');
              <!-- Conteneur pour afficher le texte de l'histoire -->
              <div class="histoire-texte" id="histoire-texte">
                 <h2></h2>
-                <p></p>
+                <p><!-- Description de l'histoire -->
+<?php foreach ($descriptions as $description) : ?>
+    <div class="description-histoire">
+        <p><?= $description['description'] ?></p>
+    </div>
+<?php endforeach; ?></p>
            <!-- Formulaire -->
  <form id="proposer-suite" method="POST" action="../Controle/creationhistoire_ctrl.php" class="histoire-form">
             <select name="ordre" id="ordre" required>
@@ -187,6 +193,7 @@ include('../Modele/connexionBDD.php');
 
        
         <?php include("../Modele/scriptcreation.php") ?>
+        
     </div>
     
     <?php include("../Modele/scriptnote.php")

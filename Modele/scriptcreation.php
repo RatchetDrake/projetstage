@@ -1,5 +1,6 @@
 
-
+<?php
+include("../Modele/connexionBDD.php") ?>
 <script> 
 // Tableau avec le texte complet de chaque histoire
 const histoires = [
@@ -185,5 +186,26 @@ document.getElementById('modifier-titre').addEventListener('submit', function(e)
         }
     });
 
+// Ajoutez cette fonction à votre script JavaScript existant
+function afficherDescriptions() {
+    const descriptionsDiv = document.getElementById('descriptions');
+
+    // Requête AJAX pour récupérer les descriptions depuis le fichier PHP
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', 'get_descriptions.php', true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            const descriptions = JSON.parse(xhr.responseText);
+            const descriptionsHTML = descriptions.map(description => `<p>${description}</p>`).join('');
+            descriptionsDiv.innerHTML = descriptionsHTML;
+        }
+    };
+
+    // Envoyer la requête
+    xhr.send();
+}
+
+// Appelez cette fonction pour afficher les descriptions lorsque nécessaire
+afficherDescriptions();
 
 </script>

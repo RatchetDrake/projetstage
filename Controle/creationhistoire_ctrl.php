@@ -68,4 +68,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo 'Erreur : ' . $e->getMessage();
     }
 }
+try {
+    // Requête SQL pour récupérer les descriptions des histoires validées
+    $query = "SELECT titre, description FROM histoire WHERE statut = 'Valide'";
+    $result = $connexion->query($query);
+
+    // Vérification des résultats
+    if ($result) {
+        $descriptions = $result->fetchAll(PDO::FETCH_ASSOC);
+    } else {
+        echo "Erreur lors de la récupération des descriptions : " . $connexion->errorInfo()[2];
+        $descriptions = array(); // Initialisation en cas d'erreur
+    }
+} catch (PDOException $e) {
+    echo "Erreur PDO : " . $e->getMessage();
+    $descriptions = array(); // Initialisation en cas d'erreur
+}
 ?>

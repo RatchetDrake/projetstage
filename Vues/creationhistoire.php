@@ -161,12 +161,7 @@ include('../Modele/connexionBDD.php');
              <!-- Conteneur pour afficher le texte de l'histoire -->
              <div class="histoire-texte" id="histoire-texte">
                 <h2></h2>
-                <p><!-- Description de l'histoire -->
-<?php foreach ($descriptions as $description) : ?>
-    <div class="description-histoire">
-        <p><?= $description['description'] ?></p>
-    </div>
-<?php endforeach; ?></p>
+                <p></p>
            <!-- Formulaire -->
  <form id="proposer-suite" method="POST" action="../Controle/creationhistoire_ctrl.php" class="histoire-form">
             <select name="ordre" id="ordre" required>

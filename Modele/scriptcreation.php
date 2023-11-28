@@ -78,22 +78,26 @@ Cependant, au milieu de cette tourmente, il y avait un espoir de changement. Une
 ];
 <?php
 // Récupération de toutes les descriptions pour chaque univers
-$sql = "SELECT univers, GROUP_CONCAT(description SEPARATOR '<br><br>') AS descriptions FROM histoire GROUP BY univers";
+$sql = "SELECT id, univers, description FROM histoire ORDER BY id";
 $stmt = $connexion->query($sql);
 $descriptions_par_univers = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-// Générez le tableau JavaScript à partir des données de la base de données
+// Générez l'objet JavaScript à partir des données de la base de données
+echo "const descriptionsUnivers = {};";
 
-echo "const descriptionsUnivers = {";
 foreach ($descriptions_par_univers as $row) {
     $univers = $row['univers'];
-    $descriptions = addslashes($row['descriptions']); // Échappez les caractères spéciaux
-    echo "$univers: \"$descriptions\",";
+    $description = addslashes($row['description']); // Échappez les caractères spéciaux
+
+    // Si l'univers n'existe pas encore dans l'objet, créez un tableau pour stocker les descriptions
+    echo "if (!descriptionsUnivers[$univers]) { descriptionsUnivers[$univers] = []; }";
+
+    // Ajoutez la description à l'univers correspondant, en entourant la variable $description avec des guillemets doubles
+    echo "descriptionsUnivers[$univers].push(\"$description\");";
 }
-echo "};";
 ?>
 
-// Fonction pour afficher le texte de l'histoire et son titre
+// Fonction pour afficher le texte de l'histoire et ses descriptions
 function afficherTexteHistoire(numero) {
     const histoireTexte = document.getElementById('histoire-texte');
     const titreHistoire = document.querySelector('.metadata .chroniques-epée-perdue');
@@ -133,16 +137,21 @@ function afficherTexteHistoire(numero) {
         universPrecedent.remove();
     }
 
-    // Afficher la description de l'univers correspondant s'il existe
+    // Afficher les descriptions de l'univers correspondant s'il existe
     if (univers !== null && descriptionsUnivers[univers]) {
-        const descriptionUnivers = descriptionsUnivers[univers];
+        const descriptions = descriptionsUnivers[univers];
         const divUnivers = document.createElement('div');
         divUnivers.className = 'univers-description';
-        divUnivers.innerHTML = `<h2>Univers ${univers}</h2><p>${descriptionUnivers}</p>`;
+
+        descriptions.forEach(description => {
+            const p = document.createElement('p');
+            p.textContent = description;
+            divUnivers.appendChild(p);
+        });
+
         histoireTexte.appendChild(divUnivers);
     }
 }
-
 
 // Ajoutez un gestionnaire d'événements aux cellules d'histoire
 for (let i = 1; i <= 6; i++) {
@@ -238,5 +247,8 @@ function afficherDescriptions() {
 
 // Appelez cette fonction pour afficher les descriptions lorsque nécessaire
 afficherDescriptions();
+function removeInvalidChars(textarea) {
+    textarea.value = textarea.value.replace(/"/g, '').replace(/\n/g, '');
+}
 
 </script>

@@ -206,3 +206,21 @@ body {
 .button:hover {
     background-color: #0056b3; /* Couleur de fond au survol */
 }
+.conteneur {
+    background-color: red;
+    min-width: 200px;
+    max-width: 600px; /* Limite la largeur de l'histoire */
+    margin: 0 auto; /* Centre l'histoire horizontalement */
+    padding: 20px;
+    background-color: #FFFFFF; /* Restauration de la couleur de fond */
+    border-radius: 8px;
+    overflow-y: scroll; /* Ajout de défilement vertical si le texte est long */
+    font-family: 'MedievalSharp';
+    font-size: 12px;
+    line-height: 1.5;
+    color: #000000;
+    margin-top: 20px; /* Ajout de marge en haut pour espacer du formulaire */
+    text-align: center; /* Centre le texte horizontalement */
+
+
+}

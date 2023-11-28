@@ -15,7 +15,6 @@ if ($result && $result->rowCount() > 0) {
     echo "<meta charset=\"UTF-8\">";
     echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">";
     echo "<title>Liste des Chapitres</title>";
-    echo "<link rel=\"stylesheet\" href=\"../Publique/Css/votre_css.css\">";
     echo "</head>";
     echo "<body>";
     echo "<h1>Liste des Chapitres</h1>";
@@ -28,21 +27,23 @@ if ($result && $result->rowCount() > 0) {
     echo "<th>Ordre</th>";
     echo "<th>Nom de l'Utilisateur</th>";
     echo "</tr>";
-
-   foreach ($result as $row) {
-    echo "<tr>";
-    echo "<td>" . $row["id"] . "</td>";
-    echo "<td>" . $row["titre"] . "</td>";
-    echo "<td>";
-    echo "<a class='content-toggle' href='#' onclick='openModal(\"" . $row["contenu"] . "\")'>Voir le contenu</a>";
-    echo "</td>";
-    echo "<td>" . $row["Nbcaracteres"] . "</td>";
-    echo "<td>" . $row["Ordre"] . "</td>";
-    echo "<td>" . $row["nom_utilisateur"] . "</td>";
-    echo "<td><button onclick='editProposition(" . $row["id"] . ")'>Modifier</button></td>"; // Bouton Modifier
-    echo "<td><button onclick='deleteProposition(" . $row["id"] . ")'>Supprimer</button></td>"; // Bouton Supprimer
-    echo "</tr>";
-}
+    foreach ($result as $row) {
+        echo "<tr>";
+        echo "<td>" . $row["id"] . "</td>";
+        echo "<td>" . $row["titre"] . "</td>";
+        echo "<td>";
+        echo "<button onclick='editProposition(" . $row["id"] . ")'>Modifier</button>"; // Bouton Modifier
+        echo "<button onclick='deleteProposition(" . $row["id"] . ")'>Supprimer</button>"; // Bouton Supprimer
+        echo "</td>";
+        echo "<td>" . $row["Nbcaracteres"] . "</td>";
+        echo "<td>" . $row["Ordre"] . "</td>";
+        echo "<td>" . $row["nom_utilisateur"] . "</td>";
+        echo "</tr>";
+    }
+    
+    
+    
+    
     
     // Code PHP de suppression
     if (isset($_POST["id"])) {

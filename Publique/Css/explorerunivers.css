@@ -1,0 +1,70 @@
+/* Appliquer la police MedievalSharp à tout le contenu de la page */
+body {
+    font-family: 'MedievalSharp', cursive;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: wheat;
+}
+
+/* Styles pour le conteneur principal */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: auto;
+    max-width: 90%;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 5%;
+    background-color: rgb(97, 39, 0);
+}
+
+/* Styles pour chaque univers */
+.universe {
+    flex: 1;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+}
+
+.universe img {
+    display: block; /* Pour centrer l'image dans son conteneur */
+    width: 200px; /* ou une autre taille fixe selon vos besoins */
+    height: 200px; /* pour maintenir l'aspect circulaire, assurez-vous que la largeur et la hauteur soient égales */
+    margin: 0 auto; /* Centrer l'image horizontalement */
+    border-radius: 50%; /* Pour rendre l'image circulaire */
+    object-fit: cover; /* Assurez-vous que l'image couvre bien la zone sans être déformée */
+}
+
+.universe p {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Styles pour les listes dans chaque univers */
+.universe ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.universe li {
+    margin-bottom: 5px;
+}
+
+/* Styles spécifiques pour chaque univers */
+#medieval { background-color: whitesmoke; }
+#scifi    { background-color: blue; }
+#western  { background-color: burlywood; }
+#magical  { background-color: cyan; }
+#postapocalyptic { background-color: greenyellow; }
+#superhero { background-color: red; }
+
+.universe-link {
+    text-decoration: none; /* Enlève le soulignement des liens */
+    color: inherit; /* Les liens utiliseront la couleur de texte héritée du parent */
+}
+

@@ -76,11 +76,10 @@ body {
     padding: 8px;
     gap: 10px;
     width: 250px; /* Largeur de l'avatar */
-    height: 150px; /* Hauteur de l'avatar */
+    height: 170px; /* Hauteur de l'avatar */
     background: none;
     border: 2px solid none;
-    border-radius: 78px;
-    overflow: hidden; /* Masquer toute partie de l'image qui dépasse les limites de l'avatar */
+    border-radius: 10px;
 }
 
 .avatar img {

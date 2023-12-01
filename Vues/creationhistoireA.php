@@ -170,36 +170,38 @@ include('../Modele/connexionBDD.php');
 
         </div>
 
- <!-- Formulaire -->
- <form id="proposer-suite" method="POST" action="../Controle/creationhistoire_ctrl.php" class="histoire-form">
-                <select name="ordre" id="ordre" required>
-                    <option value="" disabled selected>Choisissez une histoire</option>
-                    <?php
-                    // Le nombre d'histoires disponibles (modifiable en fonction de votre card)
-                    $nombreHistoires = 6; // Par exemple, 6 histoires disponibles
+        <!-- Formulaire -->
+        <form id="proposer-suite" method="POST" action="../Controle/creationhistoire_ctrl.php" class="histoire-form">
+            <select name="ordre" id="ordre" required>
+                <option value="" disabled selected>Choisissez une histoire</option>
+                <?php
+                // Le nombre d'histoires disponibles (modifiable en fonction de votre card)
+                $nombreHistoires = 6; // Par exemple, 6 histoires disponibles
 
-                    // Générez les options du menu déroulant avec les numéros d'ordre
-                    for ($i = 1; $i <= $nombreHistoires; $i++) {
-                        echo "<option value=\"$i\">Histoire $i</option>";
-                    }
-                    ?>
-                </select>
+                // Générez les options du menu déroulant avec les numéros d'ordre
+                for ($i = 1; $i <= $nombreHistoires; $i++) {
+                    echo "<option value=\"$i\">Histoire $i</option>";
+                }
+                ?>
+            </select>
 
-                <input type="text" name="titre" id="titre-histoire" placeholder="Titre de l'histoire(Optionel)">
+            <input type="text" name="titre" id="titre-histoire" placeholder="Titre de l'histoire(Optionel)">
 
-                <textarea name="proposition" id="suite-histoire" placeholder="Écrivez votre proposition ici (max 720 caractères)" rows="20" cols="60" maxlength="750" required oninput="removeInvalidChars(this)"></textarea>
+            <textarea name="proposition" id="suite-histoire" placeholder="Écrivez votre proposition ici (max 720 caractères)" rows="20" cols="60" maxlength="2000" required oninput="removeInvalidChars(this)"></textarea>
 
-                <br><button type="submit">Proposer la suite</button>
-            </form>
-        <?php include("../Modele/scriptcreation.php") ?>
+            <br><button type="submit">Proposer la suite</button>
+        </form>
+
+        <!-- Boutons "Propositions", "Archives" et "Terminer" -->
         <div class="buttons-container">
-    <a href="voir_propositionA.php" class="button">Propositions</a>
-    <a href="voir_archivesA.php" class="button">Archives</a>
-    </div>
+            <a href="voir_propositionA.php" class="button">Propositions</a>
+            <a href="voir_archivesA.php" class="button">Archives</a>
+            <a href="../Controle/terminerA.php" class="button">Terminer</a>
+        </div>
     </div>
 
-    <?php include("../Modele/scriptnote.php")
-    ?>
+    <?php include("../Modele/scriptcreation.php") ?>
+    <?php include("../Modele/scriptnote.php") ?>
 
 </body>
 
